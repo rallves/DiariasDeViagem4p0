@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="kotlin-reflect-sources">
+    <CLASSES>
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-reflect.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-stdlib-jdk7.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-stdlib-jdk8.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-stdlib.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-test.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-reflect-sources.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-reflect-sources.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-stdlib-jdk7-sources.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-stdlib-jdk8-sources.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-stdlib-sources.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-stdlib-sources.jar!/" />
+      <root url="jar://D:/backup/Intellij/sankhya-w_4.0b44/lib/kotlin-test-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
