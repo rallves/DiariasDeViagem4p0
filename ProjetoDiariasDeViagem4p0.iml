@@ -8,6 +8,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Bibliotecas Flow" level="project" />
-    <orderEntry type="library" name="batik-dom" level="project" />
+    <orderEntry type="library" name="Mod21_FlowDiariasDeViagem" level="project" />
+    <orderEntry type="library" name="blibliotecas sankhya" level="project" />
+    <orderEntry type="library" name="kotlin-reflect-sources" level="project" />
   </component>
 </module>
