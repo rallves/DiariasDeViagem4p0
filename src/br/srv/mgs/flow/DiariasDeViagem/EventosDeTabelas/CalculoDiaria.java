@@ -5,16 +5,19 @@
 
 package br.srv.mgs.flow.DiariasDeViagem.EventosDeTabelas;
 
+import br.com.mgs.utils.ErroUtils;
 import br.com.sankhya.extensions.eventoprogramavel.EventoProgramavelJava;
 import br.com.sankhya.jape.event.PersistenceEvent;
 import br.com.sankhya.jape.event.TransactionContext;
 import br.com.sankhya.jape.vo.DynamicVO;
+import br.com.sankhya.jape.vo.EntityVO;
 import br.com.sankhya.jape.wrapper.JapeFactory;
 import br.com.sankhya.jape.wrapper.JapeWrapper;
 import br.srv.mgs.commons.NativeSqlDecorator;
 import br.srv.mgs.commons.VariaveisFlow;
 import com.sankhya.util.TimeUtils;
 import kotlin.Triple;
+import kotlin.reflect.jvm.internal.impl.types.ErrorUtils;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -390,6 +393,16 @@ public class CalculoDiaria implements EventoProgramavelJava {
     }
 
     public void beforeDelete(PersistenceEvent persistenceEvent) throws Exception {
+        DynamicVO AD_ADVTRC = (DynamicVO) persistenceEvent.getVo();
+        Timestamp idinstprn = AD_ADVTRC.asTimestamp("IDINSTPRN");
+
+        NativeSqlDecorator nativeSqlDecoratorTarefa = new NativeSqlDecorator(this, "sql/BuscarTarefaAtiva.sql");
+        nativeSqlDecoratorTarefa.setParametro("IDINSTPRN", idinstprn);
+        if (nativeSqlDecoratorTarefa.proximo()){
+            if (nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0y596wb")== 0){
+                ErroUtils.disparaErro("Ação não permitida. Registro já está em fase de aprovação!");
+            }
+        }
     }
 
     public void afterInsert(PersistenceEvent persistenceEvent) throws Exception {
