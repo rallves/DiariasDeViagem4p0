@@ -243,6 +243,7 @@ public class CalculoDiaria implements EventoProgramavelJava {
         nativeSqlDecorator.setParametro("CODREGISTRO", codregistroForm);
 
         for(boolean proximo = nativeSqlDecorator.proximo(); proximo; proximo = nativeSqlDecorator.proximo()) {
+            //teste
             Timestamp dataInicioViagem = nativeSqlDecorator.getValorTimestamp("DT_INI_VIAGEM");
             Timestamp dataFimViagem = nativeSqlDecorator.getValorTimestamp("DT_FIM_VIAGEM");
             Timestamp dataInicioViagemInternacional = nativeSqlDecorator.getValorTimestamp("DT_INI_VIAGEM_INT");

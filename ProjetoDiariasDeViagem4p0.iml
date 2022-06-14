@@ -7,10 +7,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Bibliotecas Flow" level="project" />
-    <orderEntry type="library" name="Mod21_FlowDiariasDeViagem" level="project" />
-    <orderEntry type="library" name="blibliotecas sankhya" level="project" />
-    <orderEntry type="library" name="kotlin-reflect-sources" level="project" />
     <orderEntry type="library" name="Mod26_MGS" level="project" />
+    <orderEntry type="library" name="Bibliotecas Flow" level="project" />
+    <orderEntry type="library" name="blibliotecas sankhya" level="project" />
+    <orderEntry type="library" name="ejb" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="Mod21_FlowDiariasDeViagem" level="project" />
+    <orderEntry type="library" name="Mod26_MGS" level="project" />
+    <orderEntry type="library" name="Mod1_MGS" level="project" />
+    <orderEntry type="library" name="kotlin-reflect-sources" level="project" />
   </component>
 </module>
