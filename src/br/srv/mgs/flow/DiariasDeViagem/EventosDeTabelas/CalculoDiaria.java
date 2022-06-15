@@ -407,6 +407,7 @@ public class CalculoDiaria implements EventoProgramavelJava {
     }
 
     public void afterInsert(PersistenceEvent persistenceEvent) throws Exception {
+        //teste
         DynamicVO despesaVO = (DynamicVO)persistenceEvent.getVo();
         BigDecimal idInstanciaProcesso = despesaVO.asBigDecimal("IDINSTPRN");
         BigDecimal idInstanciaTarefa = despesaVO.asBigDecimal("IDINSTTAR");
