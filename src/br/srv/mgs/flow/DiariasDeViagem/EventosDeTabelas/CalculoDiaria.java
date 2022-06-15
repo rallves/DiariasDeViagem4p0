@@ -401,7 +401,7 @@ public class CalculoDiaria implements EventoProgramavelJava {
         nativeSqlDecoratorTarefa.setParametro("IDINSTPRN", idinstprn);
         if (nativeSqlDecoratorTarefa.proximo()){
             if (nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0y596wb")== 0){
-                ErroUtils.disparaErro("Ação não permitida. Registro já está em fase de aprovação!");
+                ErroUtils.disparaErro("Ação não permitida. Registro em fase de aprovação não pode ser editado!");
             }
         }
     }
