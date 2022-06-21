@@ -3,22 +3,19 @@
 // (powered by FernFlower decompiler)
 //
 
-package br.srv.mgs.flow.DiariasDeViagem.EventosDeTabelas;
+package br.srv.mgs.flow.DiariasDeViagem.Melhorias.EventosDeTabelas;
 
 import br.com.mgs.utils.ErroUtils;
 import br.com.sankhya.extensions.eventoprogramavel.EventoProgramavelJava;
 import br.com.sankhya.jape.event.PersistenceEvent;
 import br.com.sankhya.jape.event.TransactionContext;
 import br.com.sankhya.jape.vo.DynamicVO;
-import br.com.sankhya.jape.vo.EntityVO;
 import br.com.sankhya.jape.wrapper.JapeFactory;
 import br.com.sankhya.jape.wrapper.JapeWrapper;
 import br.srv.mgs.commons.NativeSqlDecorator;
 import br.srv.mgs.commons.VariaveisFlow;
 import com.sankhya.util.TimeUtils;
 import kotlin.Triple;
-import kotlin.reflect.jvm.internal.impl.types.ErrorUtils;
-
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;

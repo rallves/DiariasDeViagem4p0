@@ -1,4 +1,4 @@
-package br.srv.mgs.flow.DiariasDeViagem.BarramentoExterno;
+package br.srv.mgs.flow.DiariasDeViagem.Melhorias.BarramentoExterno;
 
 import br.com.sankhya.extensions.flow.ContextoTarefa;
 import br.com.sankhya.extensions.flow.TarefaJava;
