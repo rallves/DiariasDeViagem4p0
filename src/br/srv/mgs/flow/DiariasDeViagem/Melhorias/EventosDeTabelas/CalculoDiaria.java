@@ -391,8 +391,9 @@ public class CalculoDiaria implements EventoProgramavelJava {
     }
 
     public void beforeDelete(PersistenceEvent persistenceEvent) throws Exception {
+        //ErroUtils.disparaErro("teste");
         DynamicVO AD_ADVTRC = (DynamicVO) persistenceEvent.getVo();
-        Timestamp idinstprn = AD_ADVTRC.asTimestamp("IDINSTPRN");
+        BigDecimal idinstprn = AD_ADVTRC.asBigDecimal("IDINSTPRN");
 
         NativeSqlDecorator nativeSqlDecoratorTarefa = new NativeSqlDecorator(this, "sql/BuscarTarefaAtiva.sql");
         nativeSqlDecoratorTarefa.setParametro("IDINSTPRN", idinstprn);
