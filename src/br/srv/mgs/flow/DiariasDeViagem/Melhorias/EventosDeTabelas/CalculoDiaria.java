@@ -397,8 +397,22 @@ public class CalculoDiaria implements EventoProgramavelJava {
 
         NativeSqlDecorator nativeSqlDecoratorTarefa = new NativeSqlDecorator(this, "sql/BuscarTarefaAtiva.sql");
         nativeSqlDecoratorTarefa.setParametro("IDINSTPRN", idinstprn);
+        /*
+        'UserTask_0q1vt40'--aprovacao do diretor
+        'UserTask_0y596wb'--aprovação do cliente
+        'UserTask_0uvko90'--aprovação do gerente
+        'UserTask_00se31d'--liberação do cliente
+        'UserTask_0mn9o0e'--liberação do gerente
+        'UserTask_077hojl'--liberação do diretor
+        */
         if (nativeSqlDecoratorTarefa.proximo()){
-            if (nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0y596wb")== 0){
+            if (nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0y596wb")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0q1vt40")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0uvko90")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_00se31d")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0mn9o0e")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_077hojl")== 0
+            ){
                 ErroUtils.disparaErro("Ação não permitida. Registro em fase de aprovação não pode ser editado!");
             }
         }
