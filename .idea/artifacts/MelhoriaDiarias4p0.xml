@@ -1,8 +1,10 @@
 <component name="ArtifactManager">
   <artifact type="jar" build-on-make="true" name="MelhoriaDiarias4p0">
-    <output-path>$PROJECT_DIR$/../../../../Artefatos JARS</output-path>
+    <output-path>C:/Artefatos JARS</output-path>
     <root id="archive" name="MelhoriaDiarias4p0.jar">
       <element id="module-output" name="ProjetoDiariasDeViagem4p0" />
+      <element id="library" level="project" name="Mod21_FlowDiariasDeViagem" />
+      <element id="library" level="project" name="Mod26_MGS" />
     </root>
   </artifact>
 </component>
