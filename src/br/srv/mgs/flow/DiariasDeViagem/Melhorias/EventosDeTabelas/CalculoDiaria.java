@@ -38,6 +38,7 @@ public class CalculoDiaria implements EventoProgramavelJava {
             arquivoHospedagem = new String("S");
         }
 
+
         BigDecimal idInstanciaProcesso = trechoVO.asBigDecimal("IDINSTPRN");
         BigDecimal idInstanciaTarefa = trechoVO.asBigDecimal("IDINSTTAR");
         this.SetarParametrosTrechosNacionais(trechoVO, idInstanciaProcesso, idInstanciaTarefa);
