@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ejb">
+    <CLASSES>
+      <root url="file://D:/Bibliotecas Sankhya/ejb" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/Bibliotecas Sankhya/ejb" recursive="false" />
+  </library>
+</component>
