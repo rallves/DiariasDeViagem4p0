@@ -3,22 +3,19 @@
 // (powered by FernFlower decompiler)
 //
 
-package br.srv.mgs.flow.DiariasDeViagem.EventosDeTabelas;
+package br.srv.mgs.flow.DiariasDeViagem.Melhorias.EventosDeTabelas;
 
 import br.com.mgs.utils.ErroUtils;
 import br.com.sankhya.extensions.eventoprogramavel.EventoProgramavelJava;
 import br.com.sankhya.jape.event.PersistenceEvent;
 import br.com.sankhya.jape.event.TransactionContext;
 import br.com.sankhya.jape.vo.DynamicVO;
-import br.com.sankhya.jape.vo.EntityVO;
 import br.com.sankhya.jape.wrapper.JapeFactory;
 import br.com.sankhya.jape.wrapper.JapeWrapper;
 import br.srv.mgs.commons.NativeSqlDecorator;
 import br.srv.mgs.commons.VariaveisFlow;
 import com.sankhya.util.TimeUtils;
 import kotlin.Triple;
-import kotlin.reflect.jvm.internal.impl.types.ErrorUtils;
-
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
@@ -395,19 +392,35 @@ public class CalculoDiaria implements EventoProgramavelJava {
     }
 
     public void beforeDelete(PersistenceEvent persistenceEvent) throws Exception {
+        //ErroUtils.disparaErro("teste");
         DynamicVO AD_ADVTRC = (DynamicVO) persistenceEvent.getVo();
-        Timestamp idinstprn = AD_ADVTRC.asTimestamp("IDINSTPRN");
+        BigDecimal idinstprn = AD_ADVTRC.asBigDecimal("IDINSTPRN");
 
         NativeSqlDecorator nativeSqlDecoratorTarefa = new NativeSqlDecorator(this, "sql/BuscarTarefaAtiva.sql");
         nativeSqlDecoratorTarefa.setParametro("IDINSTPRN", idinstprn);
+        /*
+        'UserTask_0q1vt40'--aprovacao do diretor
+        'UserTask_0y596wb'--aprovação do cliente
+        'UserTask_0uvko90'--aprovação do gerente
+        'UserTask_00se31d'--liberação do cliente
+        'UserTask_0mn9o0e'--liberação do gerente
+        'UserTask_077hojl'--liberação do diretor
+        */
         if (nativeSqlDecoratorTarefa.proximo()){
-            if (nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0y596wb")== 0){
-                ErroUtils.disparaErro("Ação não permitida. Registro já está em fase de aprovação!");
+            if (nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0y596wb")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0q1vt40")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0uvko90")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_00se31d")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_0mn9o0e")== 0 ||
+                nativeSqlDecoratorTarefa.getValorString("IDELEMENTO").compareTo("UserTask_077hojl")== 0
+            ){
+                throw new Exception("<b>Ação não permitida. Registro em fase de aprovação não pode ser editado!</b>");
             }
         }
     }
 
     public void afterInsert(PersistenceEvent persistenceEvent) throws Exception {
+        //teste
         DynamicVO despesaVO = (DynamicVO)persistenceEvent.getVo();
         BigDecimal idInstanciaProcesso = despesaVO.asBigDecimal("IDINSTPRN");
         BigDecimal idInstanciaTarefa = despesaVO.asBigDecimal("IDINSTTAR");
